@@ -1,0 +1,18 @@
+{
+  "_comment": "Открытые источники, которые сайт опрашивает по расписанию. type: telegram (публичная веб-версия t.me/s/), rss (RSS или Atom), reddit (публичный JSON сабреддита). weight поднимает источник в выпуске, fun отмечает юмористические. Чтобы отключить источник, поставьте enabled: false.",
+  "sources": [
+    { "id": "aviasales", "name": "Авиасейлс", "type": "telegram", "channel": "aviasales", "home": "https://t.me/aviasales", "lang": "ru", "fun": true, "weight": 3, "enabled": true },
+    { "id": "matrasy", "name": "На Ссаных Матрасах", "type": "telegram", "channel": "thedukeofjermuk", "home": "https://t.me/thedukeofjermuk", "lang": "ru", "fun": true, "weight": 2, "enabled": true },
+    { "id": "ranarod", "name": "Ну чё, народ, погнали!", "type": "telegram", "channel": "ranarod", "home": "https://t.me/ranarod", "lang": "ru", "fun": true, "weight": 2, "enabled": true },
+    { "id": "dearpassengers", "name": "Уважаемые пассажиры", "type": "telegram", "channel": "dearpassengers", "home": "https://t.me/dearpassengers", "lang": "ru", "fun": false, "weight": 1, "enabled": true },
+    { "id": "mirgamarjoba", "name": "Мир, гамарджоба", "type": "telegram", "channel": "mirgamarjoba", "home": "https://t.me/mirgamarjoba", "lang": "ru", "fun": false, "weight": 1, "enabled": true },
+    { "id": "psgr", "name": "Журнал ПСЖР", "type": "rss", "url": "https://www.aviasales.ru/psgr/feed", "home": "https://www.aviasales.ru/psgr", "lang": "ru", "fun": false, "weight": 1, "enabled": true },
+    { "id": "r-travel", "name": "Reddit r/travel", "type": "reddit", "sub": "travel", "home": "https://www.reddit.com/r/travel/", "lang": "en", "fun": false, "weight": 1, "minScore": 150, "enabled": true },
+    { "id": "r-solotravel", "name": "Reddit r/solotravel", "type": "reddit", "sub": "solotravel", "home": "https://www.reddit.com/r/solotravel/", "lang": "en", "fun": false, "weight": 1, "minScore": 100, "enabled": true },
+    { "id": "r-travelhacks", "name": "Reddit r/TravelHacks", "type": "reddit", "sub": "TravelHacks", "home": "https://www.reddit.com/r/TravelHacks/", "lang": "en", "fun": false, "weight": 1, "minScore": 100, "enabled": true },
+    { "id": "r-funny", "name": "Reddit r/funny", "type": "reddit", "sub": "funny", "home": "https://www.reddit.com/r/funny/", "lang": "en", "fun": true, "weight": 1, "minScore": 2000, "limit": 6, "enabled": true }
+  ],
+  "skip": ["erid", "#реклама", "реклама.", "на правах рекламы", "sponsored"],
+  "perSourceLimit": 12,
+  "keepDays": 60
+}

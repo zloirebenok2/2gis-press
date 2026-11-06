@@ -1,0 +1,4 @@
+# 2пшы: сбор новостей в 06:15, 12:15 и 18:15 по Москве (время сервера UTC)
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+15 3,9,15 * * * root flock -n /tmp/2pshy-update.lock /var/www/pshy/deploy/update.sh

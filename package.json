@@ -1,0 +1,14 @@
+{
+  "name": "2pshy",
+  "private": true,
+  "type": "module",
+  "description": "2пшы: ежедневный выпуск о путешествиях, конфузах и юморе. Статический сайт, который сам собирает новости.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "rebuild": "node scripts/build.mjs --no-fetch",
+    "single": "node scripts/single.mjs",
+    "test": "node scripts/test.mjs",
+    "preview": "npx --yes serve public -l 4173"
+  }
+}

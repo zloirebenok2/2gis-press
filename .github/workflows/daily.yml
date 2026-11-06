@@ -1,0 +1,54 @@
+# Сбор новостей и публикация сайта 2gis.press.
+# Запускается сам три раза в день (время UTC: 03:15, 09:15, 15:15 = 06:15, 12:15, 18:15 по Москве),
+# после каждого изменения в репозитории и вручную кнопкой «Run workflow».
+name: Выпуск 2пшы
+
+on:
+  schedule:
+    - cron: '15 3,9,15 * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['data/items.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Проверка разборщиков
+        run: node scripts/test.mjs
+      - name: Сбор новостей и сборка сайта
+        run: node scripts/build.mjs && node scripts/single.mjs
+      - name: Сохранить архив новостей в репозиторий
+        run: |
+          git config user.name "2pshy-bot"
+          git config user.email "2pshy-bot@users.noreply.github.com"
+          git add data/items.json
+          git diff --cached --quiet || git commit -m "Выпуск $(TZ=Europe/Moscow date +'%Y-%m-%d %H:%M')"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

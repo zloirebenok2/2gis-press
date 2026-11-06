@@ -1,0 +1,11 @@
+{
+  "_comment": "Блок «Юмор со всего мира». orig: строка на языке оригинала, lang: код языка, tr: перевод.",
+  "items": [
+    { "country": "Великобритания", "lang": "en", "orig": "Forecast for London: rain, then a chance of more rain, then tea.", "tr": "Прогноз для Лондона: дождь, затем вероятность ещё дождя, затем чай." },
+    { "country": "Германия", "lang": "de", "orig": "Heute in umgekehrter Wagenreihung. Wie immer.", "tr": "Сегодня с обратным порядком вагонов. Как всегда." },
+    { "country": "Япония", "lang": "ja", "orig": "電車が一分遅れました。大変申し訳ございません。", "tr": "Поезд опоздал на одну минуту. Приносим глубочайшие извинения." },
+    { "country": "США", "lang": "en", "orig": "Tip options: 18%, 20%, 25%, or \"I'm a tourist, please explain.\"", "tr": "Варианты чаевых: 18%, 20%, 25% или «я турист, объясните, пожалуйста»." },
+    { "country": "Испания", "lang": "es", "orig": "¿Cenamos pronto? Sí, a las diez.", "tr": "Поужинаем пораньше? Конечно, в десять." },
+    { "country": "Франция", "lang": "fr", "orig": "À Paris, tout commence par « Bonjour ». Sinon, rien ne commence.", "tr": "В Париже всё начинается с «Bonjour». Иначе не начинается ничего." }
+  ]
+}

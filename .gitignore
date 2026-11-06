@@ -1,0 +1,4 @@
+public/
+node_modules/
+.test-out/
+data/items.demo.json

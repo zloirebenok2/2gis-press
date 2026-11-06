@@ -1,0 +1,4 @@
+# 2пшы: выпуск HTTPS-сертификата, повторяется каждые 15 минут до успеха и удаляется сама
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+*/15 * * * * root flock -n /tmp/2pshy-ssl.lock /var/www/pshy/deploy/ssl.sh
